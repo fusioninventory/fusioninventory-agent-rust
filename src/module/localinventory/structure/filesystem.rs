@@ -62,3 +62,10 @@ fn get_data_novolume() -> Vec<serde_json::Value> {
 fn get_data_novolume() -> Vec<serde_json::Value> {
     module::localinventory::data::filesystem::freebsd::run_inventory()
 }
+
+#[cfg(target_os = "windows")]
+fn get_data_novolume() -> Vec<serde_json::Value> {
+    // TODO
+    let data = Vec::new();
+    return data;
+}

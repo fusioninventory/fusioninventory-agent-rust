@@ -98,13 +98,13 @@ pub fn run_inventory() -> serde_json::Value {
 }
 
 #[cfg(target_os = "windows")]
-fn run_dmidecode_cmd(path: String) -> bool {
+fn run_dmidecode_cmd(path: &String) -> bool {
     let file = File::create(path).unwrap();
     let stdio = Stdio::from(file);
 
     let status = Command::new("dmidecode.exe").arg("-qt").arg("processor").arg(">").arg(path).stdout(stdio).status().expect("No such file or directory");
 
-    if status.code() != 0 {
+    if status.code() != Some(0) {
         log::error!("dmidecode.exe command not found");
         return false;
     }

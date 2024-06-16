@@ -39,8 +39,10 @@ fn get_data() -> Vec<serde_json::Value> {
 }
 
 #[cfg(target_os = "windows")]
-fn get_data() {
-    
+fn get_data() -> Vec<serde_json::Value> {
+    // TODO
+    let data = Vec::new();
+    return data;
 }
 
 // "windows"
