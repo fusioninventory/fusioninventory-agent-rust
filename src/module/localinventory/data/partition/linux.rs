@@ -1,6 +1,11 @@
 #![cfg(target_os = "linux")]
 use std::process::{Command, Stdio};
 
+// TODO
+// get partitions
+// get LVM data, with layers
+// on last layer, run operatingsystem
+
 pub fn run_inventory(disk: serde_json::Value) -> Vec<serde_json::Value> {
     log::debug!("[partition] run linux");
     let data = load_lshw_data_json();

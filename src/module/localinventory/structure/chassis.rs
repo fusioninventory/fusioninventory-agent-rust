@@ -38,7 +38,7 @@ use crate::module;
 //     connectedto => []
 // };
 
-pub fn run_inventory() {
+pub fn run_inventory() -> serde_json::Value {
     log::info!("Get Chassis information");
 
     let properties = module::localinventory::data::chassis::dmidecode::run_inventory();
@@ -64,9 +64,22 @@ pub fn run_inventory() {
         children.push(disk);
     }
 
+    // Get volumes
+    let volumes = module::localinventory::structure::volume::run_inventory();
+    for volume in volumes {
+        children.push(volume);
+    }
+
+    // get filesystem directly on partition, not on volumes
+    let filesystems = module::localinventory::structure::filesystem::run_inventory("".to_string(), "".to_string());
+    for fs in filesystems {
+        children.push(fs);
+    }
+
     chassis["children"] = serde_json::Value::Array(children);
 
     log::debug!("Local inventory: {}", serde_json::to_string_pretty(&chassis).unwrap());
+    return chassis;
 
     // TODO when finish, we can delete all temp files created on disk
 }

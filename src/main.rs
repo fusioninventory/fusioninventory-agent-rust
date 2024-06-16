@@ -9,10 +9,17 @@ use crate::common::config::Data;
 mod local_inventory_sender;
 mod module;
 mod common;
+use std::sync::mpsc;
+use std::sync::Mutex;
 
 // Manage configuration
 lazy_static! {
     pub static ref CONFIG: Data = common::config::main();
+    static ref CHANNEL: (mpsc::SyncSender<String>, Mutex<mpsc::Receiver<String>>) = common::webserver::init_channel();
+    static ref LOCALINVENTORYNEXT: (Mutex<single_value_channel::Receiver<u64>>, single_value_channel::Updater<u64>) = common::webserver::init_channel_u64();
+    static ref NETWORKDISCOVERYNEXT: (Mutex<single_value_channel::Receiver<u64>>, single_value_channel::Updater<u64>) = common::webserver::init_channel_u64();
+    static ref NETWORKINVENTORYNEXT: (Mutex<single_value_channel::Receiver<u64>>, single_value_channel::Updater<u64>) = common::webserver::init_channel_u64();
+    static ref DEPLOYNEXT: (Mutex<single_value_channel::Receiver<u64>>, single_value_channel::Updater<u64>) = common::webserver::init_channel_u64();
 }
 
 #[derive(Parser, Debug)]
@@ -54,7 +61,6 @@ fn main() {
 
     println!("args: {:?}", args);
     // return;
-    
 
     // for _ in 0..args.count {
     //     println!("Hello {}!", args.name)

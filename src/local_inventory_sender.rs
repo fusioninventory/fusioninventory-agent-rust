@@ -1,7 +1,3 @@
-// use std::fs::File;
-// use std::io::Read;
-// use log::{error, info};
-// use std::collections::HashMap;
 use serde_json::json;
 use reqwest::header::USER_AGENT;
 use crate::CONFIG;
@@ -11,7 +7,7 @@ const SERVER_URL: &str = "http://127.0.0.1/fusionsuite/backend/v1/fusioninventor
 
 #[tokio::main]
 pub async fn send_inventory() {
-println!("TEST CONFIG: {:?}", CONFIG.general.servers);
+println!("TEST CONFIG: {:?}", CONFIG.localinventory.servers);
 println!("TEST CONFIG: {:?}", CONFIG.localinventory.enabled);
 
     // let mut map = HashMap::new();

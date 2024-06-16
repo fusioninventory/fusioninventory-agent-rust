@@ -30,8 +30,6 @@ pub struct Data {
 #[derive(Deserialize, Default)]
 #[serde(default)]
 pub struct General {
-    pub servers: Vec<String>,
-    pub tags: Vec<String>,
     pub daemon: bool,
 }
 
@@ -80,6 +78,8 @@ pub struct Localinventory {
     pub enabled: bool,
     #[serde(default = "localinventory_contact_time_default")]
     pub contact_time: u64,
+    pub servers: Vec<String>,
+    pub tags: Vec<String>,
     pub no_types: Vec<String>,
     pub scan_homedirs: bool,
     pub scan_profiles: bool,
@@ -91,6 +91,7 @@ pub struct Networkdiscovery {
     pub enabled: bool,
     #[serde(default = "networkdiscovery_contact_time_default")]
     pub contact_time: u64,
+    pub servers: Vec<String>,
 }
 
 #[derive(Deserialize, Default)]
@@ -99,6 +100,7 @@ pub struct Networkinventory {
     pub enabled: bool,
     #[serde(default = "networkinventory_contact_time_default")]
     pub contact_time: u64,
+    pub servers: Vec<String>,
 }
 
 #[derive(Deserialize, Default)]
@@ -107,6 +109,7 @@ pub struct Deploy {
     pub enabled: bool,
     #[serde(default = "deploy_contact_time_default")]
     pub contact_time: u64,
+    pub servers: Vec<String>,
     #[serde(default = "p2p_default")]
     pub p2p: bool,
 }
@@ -202,8 +205,6 @@ fn p2p_default() -> bool {
 
 fn g_general_default() -> General {
     General {
-        servers: Vec::new(),
-        tags: Vec::new(),
         daemon: false,
     }
 }
@@ -243,6 +244,8 @@ fn g_localinventory_default() -> Localinventory {
     Localinventory {
         enabled: localinventory_enabled_default(),
         contact_time: localinventory_contact_time_default(),
+        servers: Vec::new(),
+        tags: Vec::new(),
         no_types: Vec::new(),
         scan_homedirs: false,
         scan_profiles: false,
@@ -253,6 +256,7 @@ fn g_networkdiscovery_default() -> Networkdiscovery {
     Networkdiscovery {
         enabled: false,
         contact_time: networkdiscovery_contact_time_default(),
+        servers: Vec::new(),
     }
 }
 
@@ -260,6 +264,7 @@ fn g_networkinventory_default() -> Networkinventory {
     Networkinventory {
         enabled: false,
         contact_time: networkinventory_contact_time_default(),
+        servers: Vec::new(),
     }
 }
 
@@ -267,6 +272,7 @@ fn g_deploy_default() -> Deploy {
     Deploy {
         enabled: false,
         contact_time: deploy_contact_time_default(),
+        servers: Vec::new(),
         p2p: p2p_default(),
     }
 }

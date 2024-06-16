@@ -23,10 +23,8 @@ pub fn run_inventory() -> Vec<serde_json::Value> {
 }
 
 #[cfg(target_os = "linux")]
-fn get_data() -> Vec<serde_json::Value>{
-    module::localinventory::data::software::linux::run_inventory();
-    let softwares = Vec::new();
-    return softwares;
+fn get_data() -> Vec<serde_json::Value> {
+    module::localinventory::data::software::linux::run_inventory()
 }
 
 #[cfg(target_os = "freebsd")]

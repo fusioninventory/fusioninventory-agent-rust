@@ -8,22 +8,12 @@ pub fn run_inventory(disk: serde_json::Value) -> Vec<serde_json::Value> {
     let partitionsproperties: Vec<serde_json::Value> = get_data(disk);
 
     for properties in partitionsproperties {
-        let mut partition = serde_json::json!({
+        let partition = serde_json::json!({
             "type": "partition",
             "properties": properties,
             "children": [],
             "connectedto": []
         });
-
-        let mut children = Vec::new();
-
-        // // (children)
-        // // TODO check if OS installed on this partition
-        let operatingsystem: serde_json::Value = module::localinventory::structure::operatingsystem::run_inventory();
-        children.push(operatingsystem);
-
-        partition["children"] = serde_json::Value::Array(children);
-        partitions.push(partition);
     }
     return partitions;
 }
