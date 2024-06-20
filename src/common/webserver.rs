@@ -160,8 +160,8 @@ pub fn rocket() -> Rocket<Build> {
     rocket::custom(figment)
         .mount("/", routes![status, default])
         .mount("/now", routes![run_localinventory, run_networkdiscovery, run_networkinventory, run_deploy])
-        .mount("/css", FileServer::from(relative!("src/static/webserver/css")))
-        .mount("/img", FileServer::from(relative!("src/static/webserver/img")))
+        .mount("/css", FileServer::from("static/webserver/css"))
+        .mount("/img", FileServer::from("static/webserver/img"))
         // create /api/status to have in json format
 }
 

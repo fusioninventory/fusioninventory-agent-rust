@@ -1,0 +1,28 @@
+name:      losslesscut
+summary:   The swiss army knife of lossless video/audio editing
+publisher: Mikael Finstad (mifino)
+store-url: https://snapcraft.io/losslesscut
+contact:   finstaden@gmail.com
+license:   unset
+description: |
+  LosslessCut aims to be the ultimate cross platform ffmpeg GUI for extremely
+  fast and lossless operations on video, audio, subtitle and other related
+  media files. The main feature is lossless trimming and cutting of video and
+  audio files, which is great for saving space by rough-cutting your large
+  video files taken from a video camera, GoPro, drone, etc. It lets you
+  quickly extract the good parts from your videos and discard many gigabytes
+  of data without doing a slow re-encode and thereby losing quality. Or you
+  can add a music or subtitle track to your video without needing to encode.
+  Everything is extremely fast because it does an almost direct data copy,
+  fueled by the awesome ffmpeg which does all the grunt work.
+commands:
+  - losslesscut
+snap-id:      uRYH61YLB0C3jpYE5sUqf3Tr3KSfuILe
+tracking:     latest/stable
+refresh-date: 2024-05-20T22:46:14+02:00
+channels:
+  latest/stable:    3.60.0 2024-01-05T14:52:54Z (129) 135MB -
+  latest/candidate: ^                                       
+  latest/beta:      ^                                       
+  latest/edge:      3.61.1 2024-05-26T22:54:20Z (131) 141MB -
+installed:          3.60.0                      (129) 135MB -

@@ -1,0 +1,18 @@
+name:      gnome-3-28-1804
+summary:   Shared GNOME 3.28 runtime for Ubuntu 18.04
+publisher: Canonical**
+store-url: https://snapcraft.io/gnome-3-28-1804
+contact:   https://gitlab.gnome.org/Community/Ubuntu/gnome-3-28-1804/issues
+license:   unset
+description: |
+  This snap includes a GNOME 3.28 stack (the base libraries and desktop
+  integration components) and shares it through the content interface.
+snap-id:      TKv5Fm000l4XiUYJW9pjWHLkCPlDbIg1
+tracking:     latest/stable
+refresh-date: 2024-05-20T22:46:21+02:00
+channels:
+  latest/stable:    3.28.0-19-g98f9e67.98f9e67 2023-04-17T09:10:03Z (198) 172MB -
+  latest/candidate: 3.28.0-19-g98f9e67.98f9e67 2023-04-11T14:18:35Z (198) 172MB -
+  latest/beta:      ^                                                           
+  latest/edge:      ^                                                           
+installed:          3.28.0-19-g98f9e67.98f9e67                      (198) 172MB -

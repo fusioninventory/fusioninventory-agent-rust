@@ -1,0 +1,147 @@
+[
+  {
+    "id" : "nvme",
+    "class" : "storage",
+    "claimed" : true,
+    "handle" : "PCI:0000:02:00.0",
+    "description" : "NVMe device",
+    "product" : "CT2000P3PSSD8",
+    "vendor" : "Micron/Crucial Technology",
+    "physid" : "0",
+    "businfo" : "pci@0000:02:00.0",
+    "logicalname" : "/dev/nvme0",
+    "version" : "P9CR40A",
+    "serial" : "2339E879323C",
+    "width" : 64,
+    "clock" : 33000000,
+    "configuration" : {
+      "driver" : "nvme",
+      "latency" : "0",
+      "nqn" : "nqn.2014.08.org.nvmexpress:c0a9c0a92339E879323C        CT2000P3PSSD8",
+      "state" : "live"
+    },
+    "capabilities" : {
+      "nvme" : true,
+      "pciexpress" : "PCI Express",
+      "msix" : "MSI-X",
+      "msi" : "Message Signalled Interrupts",
+      "pm" : "Power Management",
+      "nvm_express" : true,
+      "bus_master" : "bus mastering",
+      "cap_list" : "PCI capabilities listing"
+    }
+  },
+  {
+    "id" : "sas",
+    "class" : "storage",
+    "claimed" : true,
+    "handle" : "PCI:0000:05:00.0",
+    "description" : "Serial Attached SCSI controller",
+    "product" : "C602 chipset 4-Port SATA Storage Control Unit",
+    "vendor" : "Intel Corporation",
+    "physid" : "0",
+    "businfo" : "pci@0000:05:00.0",
+    "logicalname" : "scsi7",
+    "version" : "05",
+    "width" : 64,
+    "clock" : 33000000,
+    "configuration" : {
+      "driver" : "isci",
+      "latency" : "0"
+    },
+    "capabilities" : {
+      "sas" : true,
+      "pm" : "Power Management",
+      "pciexpress" : "PCI Express",
+      "msix" : "MSI-X",
+      "bus_master" : "bus mastering",
+      "cap_list" : "PCI capabilities listing"
+    }
+  },
+  {
+    "id" : "usb:1",
+    "class" : "storage",
+    "claimed" : true,
+    "handle" : "SCSI:06",
+    "description" : "Mass storage device",
+    "product" : "Mass Storage Device",
+    "vendor" : "Generic",
+    "physid" : "2",
+    "businfo" : "usb@5:2",
+    "logicalname" : "scsi6",
+    "version" : "1.00",
+    "serial" : "121220160204",
+    "configuration" : {
+      "driver" : "usb-storage",
+      "maxpower" : "100mA",
+      "speed" : "480Mbit/s"
+    },
+    "capabilities" : {
+      "usb-2.00" : "USB 2.0",
+      "scsi" : "SCSI",
+      "emulated" : "Emulated device",
+      "scsi-host" : "SCSI host adapter"
+    }
+  },
+  {
+    "id" : "nvme",
+    "class" : "storage",
+    "claimed" : true,
+    "handle" : "PCI:0000:08:00.0",
+    "description" : "NVMe device",
+    "product" : "WDS500G3XHC-00SJG0",
+    "vendor" : "Sandisk Corp",
+    "physid" : "0",
+    "businfo" : "pci@0000:08:00.0",
+    "logicalname" : "/dev/nvme1",
+    "version" : "102000WD",
+    "serial" : "205252800394",
+    "width" : 64,
+    "clock" : 33000000,
+    "configuration" : {
+      "driver" : "nvme",
+      "latency" : "0",
+      "nqn" : "nqn.2018-01.com.wdc:nguid:E8238FA6BF53-0001-001B448B48670125",
+      "state" : "live"
+    },
+    "capabilities" : {
+      "nvme" : true,
+      "pm" : "Power Management",
+      "msi" : "Message Signalled Interrupts",
+      "msix" : "MSI-X",
+      "pciexpress" : "PCI Express",
+      "nvm_express" : true,
+      "bus_master" : "bus mastering",
+      "cap_list" : "PCI capabilities listing"
+    }
+  },
+  {
+    "id" : "sata",
+    "class" : "storage",
+    "claimed" : true,
+    "handle" : "PCI:0000:00:1f.2",
+    "description" : "SATA controller",
+    "product" : "C600/X79 series chipset 6-Port SATA AHCI Controller",
+    "vendor" : "Intel Corporation",
+    "physid" : "1f.2",
+    "businfo" : "pci@0000:00:1f.2",
+    "logicalname" : ["scsi0", "scsi1"],
+    "version" : "05",
+    "width" : 32,
+    "clock" : 66000000,
+    "configuration" : {
+      "driver" : "ahci",
+      "latency" : "0"
+    },
+    "capabilities" : {
+      "sata" : true,
+      "msi" : "Message Signalled Interrupts",
+      "pm" : "Power Management",
+      "ahci_1.0" : true,
+      "bus_master" : "bus mastering",
+      "cap_list" : "PCI capabilities listing",
+      "emulated" : "Emulated device"
+    }
+  }
+]
+

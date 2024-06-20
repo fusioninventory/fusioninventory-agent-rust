@@ -50,8 +50,13 @@ fn get_data() -> serde_json::Value {
 }
 
 #[cfg(target_os = "windows")]
-fn get_data() {
-    
+fn get_data() -> serde_json::Value {
+    return serde_json::json!([]);
+}
+
+#[cfg(target_os = "macos")]
+fn get_data() -> serde_json::Value {
+    return serde_json::json!([]);
 }
 
 // "windows"

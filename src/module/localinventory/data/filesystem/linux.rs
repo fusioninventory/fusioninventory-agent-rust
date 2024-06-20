@@ -33,7 +33,7 @@ fn get_mounted() -> Vec<HashMap<String, String>> {
     let empty = String::from("");
     let data = match String::from_utf8(output.stdout) {
         Ok(x) => x,
-        Err(e) => empty,
+        Err(_) => empty,
     };
 
     let mut filesystems: Vec<HashMap<String, String>> = Vec::new();

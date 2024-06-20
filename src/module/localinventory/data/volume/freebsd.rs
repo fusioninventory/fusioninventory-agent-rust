@@ -158,7 +158,7 @@ fn zfs_pools() -> Vec<HashMap<String, String>> {
     let empty = String::from("");
     let data = match String::from_utf8(output.stdout) {
         Ok(x) => x,
-        Err(e) => empty,
+        Err(_) => empty,
     };
 
     // parsing the command output to extract information needed
@@ -213,7 +213,7 @@ fn zfs_datasets(volume: String) -> Vec<HashMap<String, String>> {
     let empty = String::from("");
     let data = match String::from_utf8(output.stdout) {
         Ok(x) => x,
-        Err(e) => empty,
+        Err(_) => empty,
     };
 
     let mut datasets: Vec<HashMap<String, String>> = Vec::new();

@@ -46,7 +46,7 @@ fn run_http(server: String) {
 
     let client = reqwest::blocking::Client::new();
 
-    let mut res = match client.post(server)
+    match client.post(server)
         .header(USER_AGENT, USER_AGENT_VALUE)
         .json(&inventory)
         .send() {
@@ -56,7 +56,6 @@ fn run_http(server: String) {
             },
             Err(c) => println!("ERROR: {}", c),
         };
-
 
     // let client = reqwest::Client::new();
     // let res = client.post(server)
