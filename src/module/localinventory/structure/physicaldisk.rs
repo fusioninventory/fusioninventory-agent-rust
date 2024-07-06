@@ -57,6 +57,13 @@ fn get_data() -> Vec<serde_json::Value> {
     return data;
 }
 
+#[cfg(target_os = "macos")]
+fn get_data() -> Vec<serde_json::Value> {
+    // TODO
+    let data = Vec::new();
+    return data;
+}
+
 // "windows"
 // "macos"
 // "ios"

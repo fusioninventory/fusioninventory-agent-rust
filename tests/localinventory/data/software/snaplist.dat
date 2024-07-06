@@ -1,0 +1,7 @@
+Name               Version                     Rev    Tracking       Publisher    Notes
+bare               1.0                         5      latest/stable  canonical**  base
+core18             20240416                    2823   latest/stable  canonical**  base
+gnome-3-28-1804    3.28.0-19-g98f9e67.98f9e67  198    latest/stable  canonical**  -
+gtk-common-themes  0.1-81-g442e511             1535   latest/stable  canonical**  -
+losslesscut        3.60.0                      129    latest/stable  mifino       -
+snapd              2.63                        21759  latest/stable  canonical**  snapd

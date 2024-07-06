@@ -48,7 +48,7 @@ pub fn get_boottime() -> u64 {
 pub fn get_timezone_name() -> String {
     match iana_time_zone::get_timezone() {
         Ok(name) => name,
-        Err(e) => String::from(""),
+        Err(_) => String::from(""),
     }
 }
 

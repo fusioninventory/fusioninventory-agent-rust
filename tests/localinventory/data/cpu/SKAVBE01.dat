@@ -1,0 +1,441 @@
+Processor Information
+	Socket Designation: CPU #000
+	Type: Central Processor
+	Family: Unknown
+	Manufacturer: GenuineIntel
+	Version:       Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+	Voltage: 3.3 V
+	External Clock: Unknown
+	Max Speed: 30000 MHz
+	Current Speed: 2600 MHz
+	Status: Populated, Enabled
+	Upgrade: ZIF Socket
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Characteristics:
+		64-bit capable
+		Execute Protection
+
+Processor Information
+	Socket Designation: CPU #001
+	Type: Central Processor
+	Family: Unknown
+	Manufacturer: GenuineIntel
+	Version:       Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+	Voltage: 3.3 V
+	External Clock: Unknown
+	Max Speed: 30000 MHz
+	Current Speed: 2600 MHz
+	Status: Populated, Enabled
+	Upgrade: ZIF Socket
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Characteristics:
+		64-bit capable
+		Execute Protection
+
+Processor Information
+	Socket Designation: CPU #002
+	Type: Central Processor
+	Family: Unknown
+	Manufacturer: GenuineIntel
+	Version:       Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+	Voltage: 3.3 V
+	External Clock: Unknown
+	Max Speed: 30000 MHz
+	Current Speed: 2600 MHz
+	Status: Populated, Enabled
+	Upgrade: ZIF Socket
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Characteristics:
+		64-bit capable
+		Execute Protection
+
+Processor Information
+	Socket Designation: CPU #003
+	Type: Central Processor
+	Family: Unknown
+	Manufacturer: GenuineIntel
+	Version:       Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+	Voltage: 3.3 V
+	External Clock: Unknown
+	Max Speed: 30000 MHz
+	Current Speed: 2600 MHz
+	Status: Populated, Enabled
+	Upgrade: ZIF Socket
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Characteristics:
+		64-bit capable
+		Execute Protection
+
+Processor Information
+	Socket Designation: CPU #004
+	Type: Central Processor
+	Family: Unknown
+	Manufacturer: GenuineIntel
+	Version:       Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+	Voltage: 3.3 V
+	External Clock: Unknown
+	Max Speed: 30000 MHz
+	Current Speed: 2600 MHz
+	Status: Populated, Enabled
+	Upgrade: ZIF Socket
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Characteristics:
+		64-bit capable
+		Execute Protection
+
+Processor Information
+	Socket Designation: CPU #005
+	Type: Central Processor
+	Family: Unknown
+	Manufacturer: GenuineIntel
+	Version:       Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+	Voltage: 3.3 V
+	External Clock: Unknown
+	Max Speed: 30000 MHz
+	Current Speed: 2600 MHz
+	Status: Populated, Enabled
+	Upgrade: ZIF Socket
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Characteristics:
+		64-bit capable
+		Execute Protection
+
+Processor Information
+	Socket Designation: CPU #006
+	Type: Central Processor
+	Family: Unknown
+	Manufacturer: GenuineIntel
+	Version:       Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+	Voltage: 3.3 V
+	External Clock: Unknown
+	Max Speed: 30000 MHz
+	Current Speed: 2600 MHz
+	Status: Populated, Enabled
+	Upgrade: ZIF Socket
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Characteristics:
+		64-bit capable
+		Execute Protection
+
+Processor Information
+	Socket Designation: CPU #007
+	Type: Central Processor
+	Family: Unknown
+	Manufacturer: GenuineIntel
+	Version:       Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+	Voltage: 3.3 V
+	External Clock: Unknown
+	Max Speed: 30000 MHz
+	Current Speed: 2600 MHz
+	Status: Populated, Enabled
+	Upgrade: ZIF Socket
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Characteristics:
+		64-bit capable
+		Execute Protection
+
+Cache Information
+	Socket Designation: L1
+	Configuration: Enabled, Socketed, Level 1
+	Operational Mode: Write Back
+	Location: Internal
+	Installed Size: 16 kB
+	Maximum Size: 16 kB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Asynchronous
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L1
+	Configuration: Enabled, Socketed, Level 1
+	Operational Mode: Write Back
+	Location: Internal
+	Installed Size: 16 kB
+	Maximum Size: 16 kB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Asynchronous
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L1
+	Configuration: Enabled, Socketed, Level 1
+	Operational Mode: Write Back
+	Location: Internal
+	Installed Size: 16 kB
+	Maximum Size: 16 kB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Asynchronous
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L1
+	Configuration: Enabled, Socketed, Level 1
+	Operational Mode: Write Back
+	Location: Internal
+	Installed Size: 16 kB
+	Maximum Size: 16 kB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Asynchronous
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L1
+	Configuration: Enabled, Socketed, Level 1
+	Operational Mode: Write Back
+	Location: Internal
+	Installed Size: 16 kB
+	Maximum Size: 16 kB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Asynchronous
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L1
+	Configuration: Enabled, Socketed, Level 1
+	Operational Mode: Write Back
+	Location: Internal
+	Installed Size: 16 kB
+	Maximum Size: 16 kB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Asynchronous
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L1
+	Configuration: Enabled, Socketed, Level 1
+	Operational Mode: Write Back
+	Location: Internal
+	Installed Size: 16 kB
+	Maximum Size: 16 kB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Asynchronous
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L1
+	Configuration: Enabled, Socketed, Level 1
+	Operational Mode: Write Back
+	Location: Internal
+	Installed Size: 16 kB
+	Maximum Size: 16 kB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Asynchronous
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L2
+	Configuration: Enabled, Socketed, Level 2
+	Operational Mode: Write Back
+	Location: External
+	Installed Size: 0 kB
+	Maximum Size: 24 MB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Burst
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L2
+	Configuration: Enabled, Socketed, Level 2
+	Operational Mode: Write Back
+	Location: External
+	Installed Size: 0 kB
+	Maximum Size: 24 MB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Burst
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L2
+	Configuration: Enabled, Socketed, Level 2
+	Operational Mode: Write Back
+	Location: External
+	Installed Size: 0 kB
+	Maximum Size: 24 MB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Burst
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L2
+	Configuration: Enabled, Socketed, Level 2
+	Operational Mode: Write Back
+	Location: External
+	Installed Size: 0 kB
+	Maximum Size: 24 MB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Burst
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L2
+	Configuration: Enabled, Socketed, Level 2
+	Operational Mode: Write Back
+	Location: External
+	Installed Size: 0 kB
+	Maximum Size: 24 MB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Burst
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L2
+	Configuration: Enabled, Socketed, Level 2
+	Operational Mode: Write Back
+	Location: External
+	Installed Size: 0 kB
+	Maximum Size: 24 MB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Burst
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L2
+	Configuration: Enabled, Socketed, Level 2
+	Operational Mode: Write Back
+	Location: External
+	Installed Size: 0 kB
+	Maximum Size: 24 MB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Burst
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Cache Information
+	Socket Designation: L2
+	Configuration: Enabled, Socketed, Level 2
+	Operational Mode: Write Back
+	Location: External
+	Installed Size: 0 kB
+	Maximum Size: 24 MB
+	Supported SRAM Types:
+		Burst
+		Pipeline Burst
+		Asynchronous
+	Installed SRAM Type: Burst
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+

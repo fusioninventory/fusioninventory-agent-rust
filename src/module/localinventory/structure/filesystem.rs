@@ -81,3 +81,11 @@ fn get_data_novolume() -> Vec<serde_json::Value> {
     let data = Vec::new();
     return data;
 }
+
+#[cfg(target_os = "macos")]
+fn get_data_novolume() -> Vec<serde_json::Value> {
+    // TODO
+    let data = Vec::new();
+    return data;
+}
+

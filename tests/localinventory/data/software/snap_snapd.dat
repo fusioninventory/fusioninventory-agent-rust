@@ -1,0 +1,23 @@
+name:      snapd
+summary:   Daemon and tooling that enable snap packages
+publisher: Canonical**
+store-url: https://snapcraft.io/snapd
+contact:   https://github.com/snapcore/snapd/issues
+license:   GPL-3.0
+description: |
+  Install, configure, refresh and remove snap packages. Snaps are
+  'universal' packages that work across many different Linux systems,
+  enabling secure distribution of the latest apps and utilities for
+  cloud, servers, desktops and the internet of things.
+  
+  Start with 'snap list' to see installed snaps.
+type:         snapd
+snap-id:      PMrrV4ml8uWuEUDBT8dSGnKUYbevVhc4
+tracking:     latest/stable
+refresh-date: 2024-06-02T17:37:21+02:00
+channels:
+  latest/stable:    2.63                 2024-05-23T19:10:03Z (21759) 40MB -
+  latest/candidate: 2.63                 2024-05-16T08:33:06Z (21759) 40MB -
+  latest/beta:      2.63                 2024-04-24T17:12:28Z (21759) 40MB -
+  latest/edge:      2.63+git344.gc6c677d 2024-06-25T17:56:48Z (22250) 38MB -
+installed:          2.63                                      (21759) 40MB snapd

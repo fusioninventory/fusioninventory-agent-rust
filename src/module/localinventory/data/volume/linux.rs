@@ -34,7 +34,7 @@ fn get_vgs() -> Vec<HashMap<String, String>> {
     let empty = String::from("");
     let data = match String::from_utf8(output.stdout) {
         Ok(x) => x,
-        Err(e) => empty,
+        Err(_) => empty,
     };
 
     // parsing the command output to extract information needed
@@ -73,7 +73,7 @@ fn get_lvs(volume_group: String) -> Vec<HashMap<String, String>> {
     let empty = String::from("");
     let data = match String::from_utf8(output.stdout) {
         Ok(x) => x,
-        Err(e) => empty,
+        Err(_) => empty,
     };
 
     let mut logical_volumes: Vec<HashMap<String, String>> = Vec::new();

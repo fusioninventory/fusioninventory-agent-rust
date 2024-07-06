@@ -35,9 +35,12 @@ fn get_mounted() -> Vec<HashMap<String, String>> {
     let empty = String::from("");
     let data = match String::from_utf8(output.stdout) {
         Ok(x) => x,
-        Err(e) => empty,
+        Err(_) => empty,
     };
+    parse_output(data)
+}
 
+fn parse_output(data: String) -> Vec<HashMap<String, String>> {
     let mut filesystems: Vec<HashMap<String, String>> = Vec::new();
 
     let re: Regex = Regex::new(r"^(\/dev[\w\/]+) on ([\w\/]+) \((\w+)").unwrap();
@@ -74,4 +77,22 @@ fn fill_properties(filesystems: Vec<HashMap<String, String>>) -> Vec<serde_json:
     }
 
     return filesystems_prop;
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_parse_output() {
+        let data: String = std::fs::read_to_string("tests/localinventory/data/filesystem/freebsd_mount.dat").unwrap();
+        let result: Vec<HashMap<String, String>> = parse_output(data);
+        let mut expected: Vec<HashMap<String, String>> = Vec::new();
+        expected.push(HashMap::from([
+            ("type".to_string(), "msdosfs".to_string()),
+            ("name".to_string(), "/boot/efi".to_string()),
+            ("partition".to_string(), "/dev/gpt/efiboot0".to_string()),
+        ]));
+        assert_eq!(result, expected);
+    }
 }

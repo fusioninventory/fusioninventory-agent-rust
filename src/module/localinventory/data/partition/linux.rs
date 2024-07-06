@@ -37,7 +37,7 @@ fn load_lshw_data_json() -> Vec<serde_json::Value> {
     let empty = String::from("");
     let data = match String::from_utf8(output.stdout) {
         Ok(x) => x,
-        Err(e) => empty,
+        Err(_) => empty,
     };
     
     let parts: Vec<serde_json::Value> = serde_json::from_str(&data).expect("JSON was not well-formatted in lshw output command");

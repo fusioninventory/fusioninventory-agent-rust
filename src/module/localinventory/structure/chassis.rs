@@ -68,7 +68,9 @@ pub fn run_inventory() -> serde_json::Value {
 
     // Get CPUs
     let cpus = module::localinventory::structure::cpu::run_inventory();
-    children.push(cpus);
+    for cpu in cpus {
+        children.push(cpu);
+    }
 
     // Get disks
     let disks = module::localinventory::structure::physicaldisk::run_inventory();

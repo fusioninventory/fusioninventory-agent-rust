@@ -10,12 +10,8 @@
 // details. You should have received a copy of the GNU Affero General Public
 // License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-pub mod chassis;
-pub mod cpu;
-pub mod physicaldisk;
-pub mod partition;
-pub mod operatingsystem;
-pub mod software;
-pub mod volume;
-pub mod filesystem;
-pub mod common;
+pub mod dpkg;
+pub mod rpm;
+pub mod pacman;
+pub mod nix;
+pub mod snap;

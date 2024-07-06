@@ -1,0 +1,19 @@
+name:    bare
+summary: Empty base snap, useful for testing and fully statically linked
+  snaps
+publisher: Canonical**
+store-url: https://snapcraft.io/bare
+contact:   snaps@canonical.com
+license:   unset
+description: |
+  
+type:         base
+snap-id:      EISPgh06mRh1vordZY9OZ34QHdd7OrdR
+tracking:     latest/stable
+refresh-date: 2024-05-20T22:46:00+02:00
+channels:
+  latest/stable:    1.0 2019-08-21T07:51:32Z (5) 4kB -
+  latest/candidate: ^                                
+  latest/beta:      ^                                
+  latest/edge:      1.0 2017-07-26T06:56:36Z (5) 4kB -
+installed:          1.0                      (5) 4kB base

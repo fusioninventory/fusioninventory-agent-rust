@@ -40,7 +40,7 @@ fn get_installation_date() -> String {
             let dt: DateTime<Utc> = metadata.modified().unwrap().clone().into();
             dt.format("%Y-%m-%d").to_string()
         },
-        Err(e) => {
+        Err(_) => {
             String::from("")
         }
     }

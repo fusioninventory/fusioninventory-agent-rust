@@ -55,13 +55,6 @@ struct Args {
 
 }
 
-struct NextTimes {
-    localinventory: u64,
-    networkdiscovery: u64,
-    networkinventory: u64,
-    deploy: u64,
-}
-
 fn main() {
     let args = Args::parse();
     if args.debug || CONFIG.logging.logger_level == "debug" {
