@@ -17,6 +17,7 @@ use std::env;
 use clap::Parser;
 use lazy_static::lazy_static;
 use crate::common::config::Data;
+use text_to_ascii_art::to_art;
 
 mod local_inventory_sender;
 mod module;
@@ -56,6 +57,13 @@ struct Args {
 }
 
 fn main() {
+    let devVersion: bool = true;
+
+    match to_art("FusionInventory ".to_string() + env!("CARGO_PKG_VERSION"), "small", 0, 0, 20) {
+        Ok(string) => println!("{}", string),
+        Err(err) => println!("Error: {}", err),
+    }
+    
     let args = Args::parse();
     if args.debug || CONFIG.logging.logger_level == "debug" {
         env::set_var("RUST_LOG", "debug");
@@ -63,6 +71,21 @@ fn main() {
         env::set_var("RUST_LOG", "info");
     }
     env_logger::init();
+
+    if devVersion {
+        match to_art("--------------------------------".to_string(), "small", 0, 0, 0) {
+            Ok(string) => println!("{}", string),
+            Err(err) => println!("Error: {}", err),
+        }
+        match to_art("WARNING - IT IS A DEV VERSION".to_string(), "small", 0, 0, 0) {
+            Ok(string) => println!("{}", string),
+            Err(err) => println!("Error: {}", err),
+        }
+        match to_art("--------------------------------".to_string(), "small", 0, 0, 0) {
+            Ok(string) => println!("{}", string),
+            Err(err) => println!("Error: {}", err),
+        }
+    }
 
     println!("args: {:?}", args);
     // return;

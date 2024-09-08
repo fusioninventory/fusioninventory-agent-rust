@@ -108,9 +108,7 @@ fn get_data() -> Vec<serde_json::Value> {
 
 #[cfg(target_os = "windows")]
 fn get_data() -> Vec<serde_json::Value> {
-    // module::localinventory::data::partition::windows::run_inventory(disk)
-    let data = Vec::new();
-    return data;
+    module::localinventory::data::volume::windows::run_inventory()
 }
 
 #[cfg(target_os = "macos")]

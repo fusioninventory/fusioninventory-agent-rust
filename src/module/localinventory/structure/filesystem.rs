@@ -38,7 +38,7 @@ pub fn run_inventory(vol_type: String, vol_name: String) -> Vec<serde_json::Valu
             "children": children,
             "connectedto": []
         }));
-    } else if vol_type == "".to_string() && vol_name == "".to_string() {
+    } else if (vol_type == "".to_string()) && vol_name == "".to_string() {
         // Manage flesystems not on volume, but directly on partition
 
         let filesystemsproperties = get_data_novolume();
@@ -48,6 +48,10 @@ pub fn run_inventory(vol_type: String, vol_name: String) -> Vec<serde_json::Valu
             for prop in properties.as_array() {
                 for prop2 in prop {
                     if prop2["key"] == "name" && prop2["value"] == "/" {
+                        let operatingsystem: serde_json::Value = module::localinventory::structure::operatingsystem::run_inventory();
+                        children.push(operatingsystem);
+                    }
+                    if prop2["key"] == "partition" && prop2["value"] == "C:\\" {
                         let operatingsystem: serde_json::Value = module::localinventory::structure::operatingsystem::run_inventory();
                         children.push(operatingsystem);
                     }
@@ -77,9 +81,7 @@ fn get_data_novolume() -> Vec<serde_json::Value> {
 
 #[cfg(target_os = "windows")]
 fn get_data_novolume() -> Vec<serde_json::Value> {
-    // TODO
-    let data = Vec::new();
-    return data;
+    module::localinventory::data::filesystem::windows::run_inventory()
 }
 
 #[cfg(target_os = "macos")]

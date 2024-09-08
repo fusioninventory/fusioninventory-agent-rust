@@ -1,6 +1,6 @@
 [package]
 name = "fusioninventory-agent"
-version = "3.0.0"
+version = "3.0.0-dev"
 authors = ["David Durieux <david@durieux.family>", "FusionInventory contributors"]
 description = "Agent FusionInventory for local and remote (SNMP / ESX) inventory, have also network discovery and deploy features"
 edition = "2021"
@@ -18,7 +18,7 @@ futures = "0.3.25"
 serde = { version = "1.0.152", features = ["derive"] }
 serde_json = "1.0"
 nparse = "0.0.10"
-sysinfo = "0.30.11"
+sysinfo = "0.31.4"
 simple-xml = "0.1.10"
 chrono = "0.4.38"
 iana-time-zone = "0.1.60"
@@ -30,6 +30,7 @@ rocket = "0.5.0"
 ctrlc = "3.4.4"
 single_value_channel = "1.2.2"
 regex = "1.10.4"
+text-to-ascii-art = "0.1.5"
 
 [target.'cfg(unix)'.dependencies]
 sysctl = "0.5.5"

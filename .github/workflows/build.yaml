@@ -1,0 +1,200 @@
+name: Build && deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build_FreeBSD_14_x:
+    runs-on: ubuntu-latest
+    name: Build - FreeBSD 14.x
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tests under FreeBSD
+        uses: vmactions/freebsd-vm@v1
+        with:
+          release: "14.1"
+          usesh: true
+          sync: rsync
+          copyback: true          
+          prepare: |
+            pkg install -y rust
+          run: |
+            cargo build --locked --release
+      - name: Get package info
+        id: info
+        uses: rabbitson87/get-cargo-package-info@v1
+        with:
+          package: |
+            version
+      - name: Create zip file
+        run: |
+          cp target/release/fusioninventory-agent fusioninventory-agent
+          cp -fr src/static static
+          zip -r "fusioninventory-agent-${{ fromJson(steps.info.outputs.object).package.version }}_freebsd_14.x.zip" fusioninventory-agent agent.cfg static
+      - name: Deploy with rsync
+        if: ${{ github.event.pull_request.merged }}
+        uses: "Pendect/action-rsyncer@v1.1.0"
+        env: 
+          DEPLOY_KEY: ${{ secrets.SSH_DOCUMENTATION_KEY }}
+        with:
+          flags: '-avzr'
+          options: ''
+          ssh_options: ''
+          src: 'fusioninventory-agent-${{ fromJson(steps.info.outputs.object).package.version }}_freebsd_14.x.zip'
+          dest: '${{ secrets.SSH_DOCUMENTATION_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEV_PATH }}'
+
+  build_FreeBSD_13_x:
+    runs-on: ubuntu-latest
+    name: Build - FreeBSD 13.x
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tests under FreeBSD
+        uses: vmactions/freebsd-vm@v1
+        with:
+          release: "13.3"
+          usesh: true
+          sync: rsync
+          copyback: true          
+          prepare: |
+            pkg install -y rust
+          run: |
+            cargo build --locked --release
+      - name: Get package info
+        id: info
+        uses: rabbitson87/get-cargo-package-info@v1
+        with:
+          package: |
+            version
+      - name: Create zip file
+        run: |
+          cp target/release/fusioninventory-agent fusioninventory-agent
+          cp -fr src/static static
+          zip -r "fusioninventory-agent-${{ fromJson(steps.info.outputs.object).package.version }}_freebsd_13.x.zip" fusioninventory-agent agent.cfg static
+      - name: Deploy with rsync
+        if: ${{ github.event.pull_request.merged }}
+        uses: "Pendect/action-rsyncer@v1.1.0"
+        env: 
+          DEPLOY_KEY: ${{ secrets.SSH_DOCUMENTATION_KEY }}
+        with:
+          flags: '-avzr'
+          options: ''
+          ssh_options: ''
+          src: 'fusioninventory-agent-${{ fromJson(steps.info.outputs.object).package.version }}_freebsd_13.x.zip'
+          dest: '${{ secrets.SSH_DOCUMENTATION_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEV_PATH }}'
+
+  build_others:
+    name: Build - ${{ matrix.platform.release_for }}
+    strategy:
+      matrix:
+        platform:
+          - release_for: Windows-x86_64
+            os: windows-latest
+            target: x86_64-pc-windows-msvc
+            bin: fusioninventory-agent.exe
+            name: fusioninventory-agent-Windows-x86_64.zip
+            command: build
+
+          - release_for: Windows-i686
+            os: windows-latest
+            target: i686-pc-windows-msvc
+            bin: fusioninventory-agent.exe
+            name: fusioninventory-agent-Windows-i686.zip
+            command: build
+
+          # - release_for: macOS-x86_64
+          #   os: macOS-latest
+          #   target: x86_64-apple-darwin
+          #   bin: fusioninventory-agent
+          #   name: fusioninventory-agent-Darwin-x86_64.tar.gz
+          #   command: both
+
+          - release_for: Linux-x86_64
+            os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            bin: fusioninventory-agent
+            name: fusioninventory-agent-Linux-x86_64.tar.gz
+            command: build
+
+          # - release_for: Linux-i686
+          #   os: ubuntu-latest
+          #   target: i686-unknown-linux-gnu
+          #   bin: fusioninventory-agent
+          #   name: fusioninventory-agent-Linux-i686.tar.gz
+          #   command: build
+
+          # For rapsberry pi
+          # armv7-unknown-linux-gnueabihf
+
+    runs-on: ${{ matrix.platform.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Rust cache
+        uses: Swatinem/rust-cache@v2
+      - name: Get package info
+        id: info
+        uses: rabbitson87/get-cargo-package-info@v1
+        with:
+          package: |
+            version
+      - name: Build binary
+        uses: houseabsolute/actions-rust-cross@v0
+        with:
+          command: ${{ matrix.platform.command }}
+          target: ${{ matrix.platform.target }}
+          args: "--locked --release"
+          cross-version: "19be83481fd3e50ea103d800d72e0f8eddb1c90c"
+          strip: true
+      - name: Create zip file
+        if: runner.os != 'Windows'
+        uses: vimtor/action-zip@v1.2
+        with:
+          files: target/${{ matrix.platform.target }}/release/${{ matrix.platform.bin }} agent.cfg src/static
+          dest: fusioninventory-agent-${{ fromJson(steps.info.outputs.object).package.version }}_${{ matrix.platform.target }}.zip
+
+      - name: Prepare windows dmidecode x64
+        if: runner.os == 'Windows' && matrix.platform.target == 'x86_64-pc-windows-msvc'
+        run: |
+          unzip win32\dmidecode_x64.zip
+
+      - name: Prepare windows dmidecode x86
+        if: runner.os == 'Windows' && matrix.platform.target == 'i686-pc-windows-msvc'
+        run: |
+          unzip win32\dmidecode_x86.zip
+
+      # TODO windows update agent.cfg /tmp => c:/
+      # TODO Linux chmod 755 fusioninventory-agent
+
+      - name: Create zip file
+        if: runner.os == 'Windows'
+        uses: vimtor/action-zip@v1.2
+        with:
+          files: target/${{ matrix.platform.target }}/release/${{ matrix.platform.bin }} agent.cfg src/static dmidecode.exe
+          dest: fusioninventory-agent-${{ fromJson(steps.info.outputs.object).package.version }}_${{ matrix.platform.target }}.zip
+
+
+      - uses: GuillaumeFalourd/setup-rsync@v1.2
+        id: rsync
+        with:
+          ssh_key: ${{ secrets.SSH_DOCUMENTATION_KEY }}
+      - if: runner.os == 'Windows'
+        run: |
+          choco install --no-progress openssh
+          New-Variable -Name Key -Value "D:\a\_temp\sshkey"
+          Icacls $Key
+          Icacls $Key /c /t /Inheritance:d
+          Icacls $Key /c /t /grant ${env:UserName}:F
+          TakeOwn /F $Key
+          Icacls $Key /c /t /grant:r ${env:UserName}:F
+          Icacls $Key /c /t /remove:g Administrator "Authenticated Users" BUILTIN\Administrators BUILTIN Everyone System Users BUILTIN\Users
+          Icacls $Key /c /t /remove:g BUILTIN\Users
+          Icacls $Key
+          Remove-Variable -Name Key
+        # TODO for windows get dmidecode.exe to put in zip file
+      - name: scp deployments
+        if: ${{ github.event.pull_request.merged }}
+        run: |
+          scp -o StrictHostKeyChecking=no -i "${{ steps.rsync.outputs.ssh_key_path }}" 'fusioninventory-agent-${{ fromJson(steps.info.outputs.object).package.version }}_${{ matrix.platform.target }}.zip' '${{ secrets.SSH_DOCUMENTATION_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEV_PATH }}/'

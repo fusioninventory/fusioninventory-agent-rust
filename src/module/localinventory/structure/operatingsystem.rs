@@ -51,7 +51,7 @@ fn get_data() -> serde_json::Value {
 
 #[cfg(target_os = "windows")]
 fn get_data() -> serde_json::Value {
-    return serde_json::json!([]);
+    module::localinventory::data::operatingsystem::windows::run_inventory()
 }
 
 #[cfg(target_os = "macos")]
