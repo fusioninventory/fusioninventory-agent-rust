@@ -1,4 +1,4 @@
-name: Test & build
+name: Test
 
 on:
   push:
@@ -47,63 +47,12 @@ jobs:
             name: fusioninventory-agent-Linux-x86_64.tar.gz
             command: test
 
-          # For rapsberry pi
-          # armv7-unknown-linux-gnueabihf
-
-    runs-on: ${{ matrix.platform.os }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Rust cache
-        uses: Swatinem/rust-cache@v2
-      - name: Build binary
-        uses: houseabsolute/actions-rust-cross@v0
-        with:
-          command: ${{ matrix.platform.command }}
-          target: ${{ matrix.platform.target }}
-          args: "--locked --release"
-          cross-version: "19be83481fd3e50ea103d800d72e0f8eddb1c90c"
-          strip: true
-
-  build_FreeBSD:
-    runs-on: ubuntu-latest
-    name: Build - FreeBSD
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run tests under FreeBSD
-        uses: vmactions/freebsd-vm@v1
-        with:
-          usesh: true
-          prepare: |
-            pkg install -y rust
-          run: |
-            cargo build --locked --release
-
-  build_others:
-    name: Build - ${{ matrix.platform.release_for }}
-    strategy:
-      matrix:
-        platform:
-          - release_for: Windows-x86_64
-            os: windows-latest
-            target: x86_64-pc-windows-msvc
-            bin: fusioninventory-agent.exe
-            name: fusioninventory-agent-Windows-x86_64.zip
-            command: build
-
-          # - release_for: macOS-x86_64
-          #   os: macOS-latest
-          #   target: x86_64-apple-darwin
+          # - release_for: Linux-i686
+          #   os: ubuntu-latest
+          #   target: i686-unknown-linux-gnu
           #   bin: fusioninventory-agent
-          #   name: fusioninventory-agent-Darwin-x86_64.tar.gz
-          #   command: both
-
-          - release_for: Linux-x86_64
-            os: ubuntu-latest
-            target: x86_64-unknown-linux-gnu
-            bin: fusioninventory-agent
-            name: fusioninventory-agent-Linux-x86_64.tar.gz
-            command: build
+          #   name: fusioninventory-agent-Linux-i686.tar.gz
+          #   command: test
 
           # For rapsberry pi
           # armv7-unknown-linux-gnueabihf
@@ -111,7 +60,7 @@ jobs:
     runs-on: ${{ matrix.platform.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Rust cache
         uses: Swatinem/rust-cache@v2
       - name: Build binary

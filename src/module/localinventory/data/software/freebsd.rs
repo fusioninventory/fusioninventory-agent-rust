@@ -123,9 +123,9 @@ fn fill_properties(packages: Vec<PackageStruct>) -> Vec<FinalPackageStruct> {
         let mut uninstallcommand = String::from("pkg delete -f ");
         uninstallcommand.push_str(package.name.as_str());
         let data: FinalPackageStruct = FinalPackageStruct {
-            name: package.name.clone(),
+            name: module::localinventory::data::software::common::clean_name(package.name.clone()),
             originalname: package.name,
-            version: package.version.clone(),
+            version: module::localinventory::data::software::common::clean_version(package.version.clone()),
             revision: "".to_string(),
             originalversion: package.version,
             publisher: "".to_string(),

@@ -170,11 +170,7 @@ fn get_data() -> Vec<FinalPackageStruct> {
 
 #[cfg(target_os = "windows")]
 fn get_data() -> Vec<FinalPackageStruct> {
-    // TODO
-    module::localinventory::data::software::windows::registry::run_inventory();
-
-    let data = Vec::new();
-    return data;
+    module::localinventory::data::software::windows::registry::run_inventory()
 }
 
 #[cfg(target_os = "macos")]
